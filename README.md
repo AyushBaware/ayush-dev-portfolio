@@ -2,12 +2,11 @@
 
 A modern 3D interactive portfolio website built with React, featuring immersive Three.js scenes and smooth Framer Motion animations. Showcases MERN stack development skills, projects, and contact information.
 
-## Features
-- Interactive 3D background scenes that change per page
-- Responsive design with dark/light mode
-- Animated UI components with Framer Motion
-- Contact form with email integration
-- Project showcase with live demos and GitHub links
+## ✨ Key Highlights
+- **Interactive 3D Environments:** Dynamic Three.js scenes using React Three Fiber that adapt to each route.
+- **Glassmorphism UI:** Sophisticated design with real-time Dark/Light mode synchronization.
+- **Fluid Transitions:** Silky-smooth page changes powered by Framer Motion's `AnimatePresence`.
+- **Responsive Layout:** Optimized for everything from mobile devices to ultra-wide monitors.
 
 ## Tech Stack
 - **Frontend**: React, React Router DOM
@@ -23,9 +22,17 @@ A modern 3D interactive portfolio website built with React, featuring immersive 
 1. Clone the repository
 2. Install dependencies: `npm install`
 3. Start development server: `npm run dev`
-4. Open http://localhost:5173
 
 ## Scripts
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
+
+## 📂 Project Structure
+/src/components/3d: Three.js scenes and 3D models (Robot).
+
+/src/context: Theme and Global state management.
+
+/src/pages: Individual page components (Home, About, etc.).
+
+/public: Static assets and 3D GLB files.
