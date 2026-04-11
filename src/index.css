@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/* 1. Official Tailwind v4 syntax for the 'class' strategy */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  /* Apply colors to html and body to ensure no white gaps appear during 3D loading */
+  html, body {
+    @apply transition-colors duration-500;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+
+  /* Default Light Mode */
+  :root {
+    background-color: #f8fafc;
+    color: #0f172a;
+  }
+
+  /* Dark Mode - This matches the .dark class added by your ThemeContext.jsx */
+  .dark {
+    background-color: #030712;
+    color: #f1f5f9;
+  }
+}
+
+/* 2. Global utilities for your 3D Portfolio */
+@layer components {
+  .ui-layer {
+    @apply pointer-events-none relative z-10;
+  }
+
+  .clickable {
+    @apply pointer-events-auto;
+  }
+}
