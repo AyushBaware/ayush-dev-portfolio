@@ -23,7 +23,6 @@ const About = () => {
 
   return (
     <section className="pointer-events-auto mx-auto flex min-h-[85vh] max-w-6xl flex-col justify-center px-6 py-20">
-    {/* <section className="mx-auto flex min-h-[80vh] w-full flex-col justify-start px-6 py-8 md:flex-row md:items-center md:justify-between lg:px-12"> */}
       <motion.div 
         variants={containerVariants}
         initial="hidden"
@@ -66,13 +65,17 @@ const About = () => {
               ))}
             </div>
 
-            <motion.button 
+            {/* --- PROFESSIONAL PREVIEW LINK --- */}
+            <motion.a 
+              href="/Ayush-Baware-Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05, backgroundColor: "#06b6d4", color: "#fff" }}
               whileTap={{ scale: 0.95 }}
-              className="w-fit rounded-xl bg-slate-900 dark:bg-white px-8 py-3 font-bold text-white dark:text-black transition-all"
+              className="w-fit inline-flex justify-center items-center rounded-xl bg-slate-900 dark:bg-white px-8 py-3 font-bold text-white dark:text-black transition-all cursor-pointer"
             >
-              Download CV
-            </motion.button>
+              View Resume
+            </motion.a>
           </motion.div>
         </div>
       </motion.div>

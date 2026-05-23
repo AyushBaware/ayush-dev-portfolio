@@ -35,7 +35,6 @@ export default function Projects() {
             {/* Image Placeholder / Project Preview */}
             <div className="relative h-48 w-full overflow-hidden bg-slate-900">
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10" />
-              {/* If you have project.image, use it here, otherwise this glow looks cool */}
               <div className="absolute -inset-2 bg-cyan-500/20 blur-2xl group-hover:bg-cyan-500/40 transition-colors" />
 
               <div className="relative z-20 flex h-full items-end p-6">
@@ -70,13 +69,17 @@ export default function Projects() {
               <div className="mt-8 flex items-center gap-6">
                 <a
                   href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-slate-400 hover:text-white transition-colors"
                 >
                   <FaGithub size={22} />
                 </a>
                 <a
-                  href={project.link}
-                  className="flex items-center gap-2 text-sm font-bold text-cyan-400 hover:text-cyan-300"
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm font-bold text-cyan-400 hover:text-cyan-300 transition-colors"
                 >
                   LIVE DEMO <FaExternalLinkAlt size={12} />
                 </a>

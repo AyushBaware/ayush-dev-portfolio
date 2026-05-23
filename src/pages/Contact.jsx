@@ -8,31 +8,40 @@ const Contact = () => {
   const [isSending, setIsSending] = useState(false);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    const serviceId = import.meta.env.VITE_EMAIL_SERVICE_ID;
-    const templateId = import.meta.env.VITE_EMAIL_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAIL_PUBLIC_KEY;
+  e.preventDefault();
+  const serviceId = import.meta.env.VITE_EMAIL_SERVICE_ID;
+  const templateId = import.meta.env.VITE_EMAIL_TEMPLATE_ID; 
+  const publicKey = import.meta.env.VITE_EMAIL_PUBLIC_KEY;
+  
+  // Clean, professional reference pointing to your .env file
+  const autoReplyTemplateId = import.meta.env.VITE_EMAIL_AUTO_REPLY_TEMPLATE_ID; 
 
-    if (!serviceId || !templateId || !publicKey) {
-      toast.error("Keys missing!");
-      return;
-    }
+  if (!serviceId || !templateId || !autoReplyTemplateId || !publicKey) {
+    toast.error("Keys missing!");
+    return;
+  }
 
-    setIsSending(true);
-    emailjs.sendForm(serviceId, templateId, formRef.current, publicKey)
-      .then(() => {
-        toast.success("Message received!");
-        formRef.current.reset();
-      })
-      .catch(() => toast.error("Failed to send."))
-      .finally(() => setIsSending(false));
-  };
+  setIsSending(true);
+
+  // STEP 1: Send details to your personal inbox
+  emailjs.sendForm(serviceId, templateId, formRef.current, publicKey)
+    .then(() => {
+      // STEP 2: Trigger confirmation email back to the visitor
+      return emailjs.sendForm(serviceId, autoReplyTemplateId, formRef.current, publicKey);
+    })
+    .then((response) => {
+      console.log("Both emails sent successfully!", response.status, response.text);
+      toast.success("Message received!");
+      formRef.current.reset();
+    })
+    .catch((error) => {
+      console.error("EmailJS Error Breakdown:", error);
+      toast.error(`Failed to send: ${error?.text || "Unknown Server Error"}`);
+    })
+    .finally(() => setIsSending(false));
+};
 
   return (
-    /* REDUCED SPACING: 
-       Changed pt-24 to pt-20 on desktop and pt-16 to pt-12 on mobile.
-       Added min-h-[90vh] to keep the robot and card vertically balanced.
-    */
     <section className="pointer-events-auto relative isolate mx-auto flex min-h-[90vh] max-w-7xl flex-col justify-start px-6 pt-12 pb-12 md:pt-20 lg:flex-row lg:items-center lg:justify-between">
       
       {/* Contact Form Card */}
@@ -42,7 +51,6 @@ const Contact = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="relative z-30 w-full max-w-xl rounded-[1.5rem] border border-black/5 dark:border-white/10 bg-white/40 dark:bg-white/5 p-6 backdrop-blur-xl shadow-2xl md:p-10 transition-colors duration-500"
       >
-        {/* Glow Decoration */}
         <div className="absolute -top-10 -left-10 h-32 w-32 rounded-full bg-cyan-500/10 blur-[60px]" />
 
         <div className="mb-6 md:mb-8 text-center lg:text-left">
@@ -55,8 +63,9 @@ const Contact = () => {
         </div>
 
         <form ref={formRef} onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
+          {/* Full Name */}
           <div className="group relative">
-            <label className="text-[10px] font-bold uppercase text-slate-500 group-focus-within:text-cyan-500">
+            <label className="text-[10px] font-bold uppercase text-slate-500 group-focus-within:text-cyan-500 transition-colors">
               Full Name
             </label>
             <input
@@ -68,8 +77,9 @@ const Contact = () => {
             />
           </div>
 
+          {/* Email Address */}
           <div className="group relative">
-            <label className="text-[10px] font-bold uppercase text-slate-500 group-focus-within:text-cyan-500">
+            <label className="text-[10px] font-bold uppercase text-slate-500 group-focus-within:text-cyan-500 transition-colors">
               Email Address
             </label>
             <input
@@ -81,8 +91,9 @@ const Contact = () => {
             />
           </div>
 
+          {/* Message */}
           <div className="group relative">
-            <label className="text-[10px] font-bold uppercase text-slate-500 group-focus-within:text-cyan-500">
+            <label className="text-[10px] font-bold uppercase text-slate-500 group-focus-within:text-cyan-500 transition-colors">
               Message
             </label>
             <textarea
@@ -94,19 +105,20 @@ const Contact = () => {
             />
           </div>
 
+          {/* Submit Button */}
           <motion.button
             whileHover={{ scale: 1.01 }}
             whileTap={{ scale: 0.99 }}
             disabled={isSending}
             type="submit"
-            className="w-full rounded-xl bg-cyan-500 py-4 font-bold text-white dark:text-slate-950 transition-all hover:bg-cyan-400"
+            className="w-full rounded-xl bg-cyan-500 py-4 font-bold text-white dark:text-slate-950 transition-all hover:bg-cyan-400 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSending ? "SENDING..." : "SEND MESSAGE"}
           </motion.button>
         </form>
       </motion.div>
 
-      {/* Spacer for Robot */}
+      {/* 3D Model Placeholder Spacing */}
       <div className="hidden lg:block lg:w-1/3" />
     </section>
   );
