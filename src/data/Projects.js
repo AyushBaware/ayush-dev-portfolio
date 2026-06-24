@@ -14,5 +14,13 @@ export const projects = [
     github: "https://github.com/AyushBaware/Immersive-Task-Interface", 
     live: "http://task-orbiter-3d.vercel.app",
     category: "3D Interaction"
+  },
+  {
+    title: "AI Document Assistant",
+    description: "An intelligent document assistant built on a RAG (Retrieval-Augmented Generation) architecture, enabling users to upload documents and interact with them through natural language queries. Delivers accurate, context-aware answers by retrieving relevant content before generating responses.",
+    tags: ["React", "RAG", "AI Integration", "Vector Search", "LLM", "Document Processing"],
+    github: "https://github.com/AyushBaware/ai-document-assistant.git", 
+    live: "",
+    category: "AI & Full Stack"
   }
 ];
