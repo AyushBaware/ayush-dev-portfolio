@@ -27,7 +27,7 @@ export const projects = [
     live: "https://finsight-ai-finance-manager.vercel.app/",
     category: "AI & Full Stack",
     featured: true,
-    image: null, // replace with "/projects/finsight-preview.png" once available
+    image: "/FinSight.png",
   },
   {
     title: "AI Document Assistant",
@@ -38,7 +38,7 @@ export const projects = [
     live: null,
     category: "AI & Full Stack",
     featured: false,
-    image: null, // replace with "/projects/docassistant-preview.png" once available
+    image: "/AiDocumentAssistant.png",
   },
   {
     title: "Immersive Task Interface",
@@ -49,6 +49,6 @@ export const projects = [
     live: "https://task-orbiter-3d.vercel.app",
     category: "3D Interaction",
     featured: false,
-    image: null, // replace with "/projects/taskorbiter-preview.png" once available
+    image: "/OrbiterImg.png",
   },
 ];

@@ -34,8 +34,15 @@ export default function Projects() {
           >
             {/* Image Placeholder / Project Preview */}
             <div className="relative h-48 w-full overflow-hidden bg-slate-900">
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10" />
-              <div className="absolute -inset-2 bg-cyan-500/20 blur-2xl group-hover:bg-cyan-500/40 transition-colors" />
+              {project.image && (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="absolute inset-0 h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                />
+              )}
+              <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/85 to-transparent z-10" />
+              <div className="absolute -inset-2 -z-10 bg-cyan-500/20 blur-2xl group-hover:bg-cyan-500/40 transition-colors" />
 
               <div className="relative z-20 flex h-full items-end p-6">
                 <span className="text-xs font-bold tracking-widest text-cyan-400 uppercase">
