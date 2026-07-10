@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa';
-import { SiTailwindcss, SiMongodb, SiExpress } from 'react-icons/si'; 
+import { SiTailwindcss, SiMongodb, SiExpress, SiPostgresql } from 'react-icons/si'; 
 
 // Container variants for the staggered entrance
 const containerVariants = {
@@ -62,6 +62,7 @@ const Skills = () => {
     { name: 'Tailwind', icon: SiTailwindcss, color: '#06B6D4' },
     { name: 'Node.js', icon: FaNodeJs, color: '#339933' },
     { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
+    { name: 'PostgreSQL', icon: SiPostgresql, color: '#336791' },
     { name: 'Express', icon: SiExpress, color: '#808080' },
     { name: 'Database', icon: FaDatabase, color: '#ffa500' },
   ];
