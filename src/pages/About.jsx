@@ -44,14 +44,28 @@ const About = () => {
         <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-purple-500/10 blur-[60px]" />
 
         {/* Header */}
-        <motion.div variants={itemVariants} className="relative z-10">
-          <h2 className="text-sm font-bold tracking-[0.3em] text-cyan-500 dark:text-cyan-400 uppercase">
-            Discovery
-          </h2>
-          <h3 className="mt-2 text-5xl font-black text-slate-900 dark:text-white md:text-7xl">
-            About{" "}
-            <span className="text-slate-400 dark:text-slate-500">Me.</span>
-          </h3>
+        <motion.div
+          variants={itemVariants}
+          className="relative z-10 flex flex-col items-center gap-6 text-center sm:flex-row sm:text-left"
+        >
+          <div className="relative shrink-0">
+            <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-cyan-500 via-blue-500 to-purple-600 opacity-70 blur-md" />
+            <img
+              src="/ayush-profile.jpeg"
+              alt="Ayush Baware"
+              className="relative h-28 w-28 rounded-full border-2 border-white/50 dark:border-white/10 object-cover shadow-xl md:h-32 md:w-32"
+            />
+          </div>
+
+          <div>
+            <h2 className="text-sm font-bold tracking-[0.3em] text-cyan-500 dark:text-cyan-400 uppercase">
+              Discovery
+            </h2>
+            <h3 className="mt-2 text-5xl font-black text-slate-900 dark:text-white md:text-7xl">
+              About{" "}
+              <span className="text-slate-400 dark:text-slate-500">Me.</span>
+            </h3>
+          </div>
         </motion.div>
 
         <div className="mt-12 grid gap-12 md:grid-cols-2 relative z-10">
@@ -70,11 +84,12 @@ const About = () => {
                 MERN Stack
               </span>
               . I believe great websites should be <em>experiences</em> — not
-              just pages. Currently deepening my knowledge of{" "}
+              just pages. That belief shows up in{" "}
               <span className="text-cyan-600 dark:text-cyan-400 font-medium">
-                React Three Fiber
+                every project I ship
               </span>{" "}
-              and real-time 3D on the web.
+              — from AI-driven tools to interactive 3D interfaces, each one
+              built end-to-end and taken seriously enough to deploy.
             </p>
 
             {/* Availability badge */}
@@ -134,6 +149,34 @@ const About = () => {
             </motion.a>
           </motion.div>
         </div>
+
+        {/* Education */}
+        <motion.div
+          variants={itemVariants}
+          className="relative z-10 mt-12 border-t border-black/10 dark:border-white/10 pt-10"
+        >
+          <h4 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">
+            Education
+          </h4>
+          <p className="text-lg font-bold text-slate-900 dark:text-white">
+            Master of Computer Applications (MCA)
+          </p>
+          <p className="text-sm text-slate-500 dark:text-slate-400">
+            Vivekanand Education Society's Institute of Technology, Mumbai
+          </p>
+
+          <div className="mt-4 flex flex-wrap gap-2">
+            <span className="rounded-full border border-black/5 dark:border-white/10 bg-black/5 dark:bg-white/5 px-4 py-1 text-xs font-bold text-slate-600 dark:text-slate-300">
+              Sem 1 SGPA: 9.17
+            </span>
+            <span className="rounded-full border border-black/5 dark:border-white/10 bg-black/5 dark:bg-white/5 px-4 py-1 text-xs font-bold text-slate-600 dark:text-slate-300">
+              Sem 2 SGPA: 9.52
+            </span>
+            <span className="rounded-full border border-cyan-500/20 bg-cyan-500/10 px-4 py-1 text-xs font-bold text-cyan-600 dark:text-cyan-400">
+              MCA-CET: 98.76 %ile
+            </span>
+          </div>
+        </motion.div>
       </motion.div>
     </section>
   );
