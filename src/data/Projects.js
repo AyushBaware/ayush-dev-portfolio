@@ -19,33 +19,33 @@
  */
 export const projects = [
   {
-    title: "FinSight — AI Finance Manager",
+    title: "FinSight — AI Finance Manager", 
     description:
       "AI-powered PWA for personal finance: voice-based expense logging, automatic ML categorisation, and real-time analytics dashboards. Handles offline-first sync via Firebase, so your budget data is always available.",
     tags: ["React", "Firebase", "Tailwind CSS", "PWA", "AI"],
-    github: "https://github.com/AyushBaware/finsight-ai-finance-manager",
+    github: "https://github.com/AyushBaware/finsight-ai-finance-manager.git",
     live: "https://finsight-ai-finance-manager.vercel.app/",
     category: "AI & Full Stack",
     featured: true,
     image: "/FinSight.png",
   },
   {
-    title: "AI Document Assistant",
-    description:
-      "An intelligent chat interface built on a RAG (Retrieval-Augmented Generation) architecture. Upload documents and interact with them in natural language; it uses vector search for precise, context-aware answers.",
-    tags: ["React", "RAG", "Vector Search", "LLM", "Document Proc."],
-    github: "https://github.com/AyushBaware/ai-document-assistant.git",
-    live: null,
-    category: "AI & Full Stack",
-    featured: false,
-    image: "/AiDocumentAssistant.png",
-  },
+  title: "DocuMind AI",
+  description:
+    "Full-stack RAG platform for document intelligence: upload PDFs/DOCX/PPTs and get AI summaries, notes, and a grounded chat assistant with citations. Vector search via MongoDB Atlas, BYOK Gemini integration, and Google OAuth session history.",
+  tags: ["React", "Node.js", "RAG", "MongoDB Atlas", "Gemini AI"],
+  github: "https://github.com/AyushBaware/ai-document-assistant.git",
+  live: "https://documind-ai-brown.vercel.app",
+  category: "AI & Full Stack",
+  featured: false,
+  image: "/DocuMindAI.png",
+},
   {
     title: "Immersive Task Interface",
     description:
       "A 3D dashboard that turns a to-do list into an orbital experience. Built with React Three Fiber and glassmorphism UI; lazy-loads 3D assets to stay at a solid 60 FPS even on mid-range devices.",
     tags: ["React", "Three.js", "Tailwind CSS", "R3F"],
-    github: "https://github.com/AyushBaware/Immersive-Task-Interface",
+    github: "https://github.com/AyushBaware/Immersive-Task-Interface.git",
     live: "https://task-orbiter-3d.vercel.app",
     category: "3D Interaction",
     featured: false,
