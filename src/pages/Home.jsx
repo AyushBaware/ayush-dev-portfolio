@@ -53,12 +53,12 @@ export default function Home() {
   return (
     <section className="mx-auto flex min-h-[80vh] w-full flex-col justify-start px-6 py-8 md:flex-row md:items-center md:justify-between lg:px-12">
       {/* ── Left content ── */}
-      <div className="pointer-events-auto relative z-10 max-w-2xl rounded-2xl border border-black/5 dark:border-white/5 bg-white/10 dark:bg-white/5 p-8 backdrop-blur-md shadow-xl dark:shadow-2xl transition-colors duration-500">
+      <div className="pointer-events-auto relative z-10 max-w-2xl rounded-[2rem] border border-black/5 dark:border-white/10 bg-white/40 dark:bg-white/5 p-8 backdrop-blur-xl shadow-xl dark:shadow-2xl transition-colors duration-500">
         {/* Decorative glow that pulses slowly */}
         <motion.div
           animate={{ opacity: [0.15, 0.3, 0.15], scale: [1, 1.05, 1] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="pointer-events-none absolute -inset-px rounded-2xl bg-cyan-500/10 blur-2xl"
+          className="pointer-events-none absolute -inset-px rounded-[2rem] bg-cyan-500/15 blur-2xl"
         />
 
         <motion.div
