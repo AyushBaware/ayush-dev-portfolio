@@ -49,7 +49,7 @@ const Contact = () => {
         initial={{ opacity: 0, scale: 0.98 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="relative z-30 w-full max-w-xl rounded-[1.5rem] border border-black/5 dark:border-white/10 bg-white/40 dark:bg-white/5 p-6 backdrop-blur-xl shadow-2xl md:p-10 transition-colors duration-500"
+        className="relative z-30 w-full max-w-xl rounded-[1.5rem] border border-black/10 dark:border-white/10 bg-white/70 dark:bg-white/5 p-6 backdrop-blur-xl shadow-2xl md:p-10 transition-colors duration-500"
       >
         <div className="absolute -top-10 -left-10 h-32 w-32 rounded-full bg-cyan-500/10 blur-[60px]" />
 

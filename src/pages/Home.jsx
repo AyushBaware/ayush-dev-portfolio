@@ -53,7 +53,7 @@ export default function Home() {
   return (
     <section className="mx-auto flex min-h-[80vh] w-full flex-col justify-start px-6 py-8 md:flex-row md:items-center md:justify-between lg:px-12">
       {/* ── Left content ── */}
-      <div className="pointer-events-auto relative z-10 max-w-2xl rounded-[2rem] border border-black/5 dark:border-white/10 bg-white/40 dark:bg-white/5 p-8 backdrop-blur-xl shadow-xl dark:shadow-2xl transition-colors duration-500">
+      <div className="pointer-events-auto relative z-10 max-w-2xl rounded-[2rem] border border-black/10 dark:border-white/10 bg-white/70 dark:bg-white/5 p-8 backdrop-blur-xl shadow-xl dark:shadow-2xl transition-colors duration-500">
         {/* Decorative glow that pulses slowly */}
         <motion.div
           animate={{ opacity: [0.15, 0.3, 0.15], scale: [1, 1.05, 1] }}
@@ -98,7 +98,7 @@ export default function Home() {
             </Link>
 
             <Link to="/contact">
-              <button className="rounded-xl border border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 px-8 py-4 font-bold text-slate-900 dark:text-white backdrop-blur-sm transition-all hover:border-cyan-500/50 hover:bg-slate-100 dark:hover:bg-slate-800">
+              <button className="rounded-xl border border-slate-400 dark:border-slate-700 bg-white/70 dark:bg-slate-900/50 px-8 py-4 font-bold text-slate-900 dark:text-white backdrop-blur-sm transition-all hover:border-cyan-500/50 hover:bg-slate-100 dark:hover:bg-slate-800">
                 CONTACT ME
               </button>
             </Link>

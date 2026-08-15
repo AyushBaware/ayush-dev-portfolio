@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa';
-import { SiTailwindcss, SiMongodb, SiExpress, SiPostgresql } from 'react-icons/si'; 
+import { SiTailwindcss, SiMongodb, SiExpress, SiPostgresql } from 'react-icons/si';
+import { useTheme } from '../context/ThemeContext'; 
 
 // Container variants for the staggered entrance
 const containerVariants = {
@@ -19,7 +20,7 @@ const cardVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-const SkillCard = ({ icon: Icon, name, color }) => {
+const SkillCard = ({ icon: Icon, name, color, isDark }) => {
   if (!Icon) return null;
 
   return (
@@ -31,17 +32,17 @@ const SkillCard = ({ icon: Icon, name, color }) => {
         rotateX: 10, 
         rotateY: 10 
       }}
-      className="pointer-events-auto relative group flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md transition-all hover:border-cyan-500/50 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] z-10"
+      className="pointer-events-auto relative group flex flex-col items-center justify-center rounded-2xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 p-6 backdrop-blur-md transition-all hover:border-cyan-500/50 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] z-10"
     >
       <motion.div
         className="text-6xl mb-4 transition-colors duration-300"
-        style={{ color: 'rgba(255,255,255,0.5)' }}
+        style={{ color: isDark ? 'rgba(255,255,255,0.5)' : 'rgba(100,116,139,0.6)' }}
         whileHover={{ scale: 1.2, rotateY: 360, color: color }}
         transition={{ type: "spring", stiffness: 260, damping: 20 }}
       >
         <Icon />
       </motion.div>
-      <span className="text-sm font-bold tracking-widest text-slate-400 group-hover:text-white uppercase">
+      <span className="text-sm font-bold tracking-widest text-slate-500 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white uppercase">
         {name}
       </span>
       
@@ -54,6 +55,8 @@ const SkillCard = ({ icon: Icon, name, color }) => {
 };
 
 const Skills = () => {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
   const skills = [
     { name: 'HTML5', icon: FaHtml5, color: '#E34F26' },
     { name: 'CSS3', icon: FaCss3Alt, color: '#1572B6' },
@@ -89,7 +92,7 @@ const Skills = () => {
         className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
       >
         {skills.map((skill) => (
-          <SkillCard key={skill.name} {...skill} />
+          <SkillCard key={skill.name} {...skill} isDark={isDark} />
         ))}
       </motion.div>
     </section>

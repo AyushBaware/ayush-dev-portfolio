@@ -21,7 +21,7 @@ export default function Navbar() {
       transition={{ duration: 0.5 }}
       className="fixed top-0 left-0 right-0 z-[100] w-full pointer-events-none px-2 py-4 sm:px-6 sm:py-6"
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-black/5 dark:border-white/10 bg-white/20 dark:bg-slate-950/20 px-3 py-2 sm:px-8 sm:py-3 backdrop-blur-md shadow-xl dark:shadow-2xl pointer-events-auto transition-colors duration-500">
+      <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-black/10 dark:border-white/10 bg-white/60 dark:bg-slate-950/20 px-3 py-2 sm:px-8 sm:py-3 backdrop-blur-md shadow-xl dark:shadow-2xl pointer-events-auto transition-colors duration-500">
         
         {/* Logo - Fixed Laptop visibility + Auto-hide .DEV on mobile */}
         <motion.h1 

@@ -37,7 +37,7 @@ const About = () => {
         initial="hidden"
         animate="visible"
         viewport={{ once: true }}
-        className="relative overflow-hidden rounded-[2rem] border border-black/5 dark:border-white/10 bg-white/40 dark:bg-white/5 p-8 backdrop-blur-xl shadow-2xl md:p-16 transition-colors duration-500"
+        className="relative overflow-hidden rounded-[2rem] border border-black/10 dark:border-white/10 bg-white/70 dark:bg-white/5 p-8 backdrop-blur-xl shadow-2xl md:p-16 transition-colors duration-500"
       >
         {/* Decorative blobs */}
         <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-cyan-500/10 blur-[80px]" />
