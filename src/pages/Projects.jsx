@@ -12,10 +12,10 @@ export default function Projects() {
         transition={{ duration: 0.6 }}
         className="mb-16 text-center lg:text-left"
       >
-        <h2 className="text-sm font-bold tracking-[0.5em] text-cyan-400 uppercase">
+        <h2 className="text-sm font-bold tracking-[0.5em] text-cyan-500 dark:text-cyan-400 uppercase">
           Portfolio
         </h2>
-        <h3 className="mt-2 text-5xl font-black text-white md:text-7xl">
+        <h3 className="mt-2 text-5xl font-black text-slate-900 dark:text-white md:text-7xl">
           Featured <span className="text-slate-500">Work.</span>
         </h3>
       </motion.div>
@@ -30,7 +30,7 @@ export default function Projects() {
             transition={{ delay: index * 0.1 }}
             viewport={{ once: true }}
             whileHover={{ y: -10 }}
-            className="group relative flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all hover:border-cyan-500/50 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+            className="group relative flex flex-col overflow-hidden rounded-3xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur-xl transition-all hover:border-cyan-500/50 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
           >
             {/* Image Placeholder / Project Preview */}
             <div className="relative h-48 w-full overflow-hidden bg-slate-900">
@@ -53,10 +53,10 @@ export default function Projects() {
 
             {/* Content */}
             <div className="flex flex-1 flex-col p-8">
-              <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-cyan-400 transition-colors">
                 {project.title}
               </h3>
-              <p className="mt-4 flex-1 text-slate-400 leading-relaxed line-clamp-3">
+              <p className="mt-4 flex-1 text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-3">
                 {project.description}
               </p>
 
@@ -65,7 +65,7 @@ export default function Projects() {
                 {project.tags?.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-md bg-white/5 px-2 py-1 text-[10px] font-bold text-slate-300 uppercase tracking-tighter border border-white/5"
+                    className="rounded-md bg-black/5 dark:bg-white/5 px-2 py-1 text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-tighter border border-black/5 dark:border-white/5"
                   >
                     {tag}
                   </span>
@@ -78,7 +78,7 @@ export default function Projects() {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-slate-400 hover:text-white transition-colors"
+                  className="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
                 >
                   <FaGithub size={22} />
                 </a>
