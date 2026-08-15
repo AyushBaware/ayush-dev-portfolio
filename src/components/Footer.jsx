@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 function Footer() {
   return (
-    <footer className="pointer-events-auto w-full border-t border-white/5 py-8 backdrop-blur-sm">
+    <footer className="pointer-events-auto w-full border-t border-white/5 py-4 sm:py-5 backdrop-blur-sm">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between px-6 md:flex-row">
         <p className="text-sm font-medium text-slate-500">
           © {new Date().getFullYear()} <span className="text-slate-300">Ayush Baware</span>
