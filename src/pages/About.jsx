@@ -134,7 +134,7 @@ const About = () => {
 
             {/* --- PROFESSIONAL PREVIEW LINK --- */}
             <motion.a
-              href="/Ayush-Baware-Resume.pdf"
+              href="/Ayush_Baware_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{
